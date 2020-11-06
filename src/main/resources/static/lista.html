@@ -6,9 +6,31 @@
 </head>
 <body>
 
-	Esta é a lista <hr>
-	<a href="index.html"> Home </a> | 
-	<a href="lista.html"> Lista </a> | 
+	Esta é a lista
+	<hr>
+	<a href="index.html"> Home </a> |
+	<a href="lista.html"> Lista </a> |
 	<a href="inserir.html"> Inserir </a> |
+	<br>
+	
+	<table border="1">
+		<tr>
+			<th>id</th>
+			<th>nome</th>
+			<th>data</th>
+			<th>categoria</th>
+			<th>pago</th>
+			<th>acoes</th>
+		</tr>
+		<tr ng-repeat = "manutencao in manutencoes">
+			<td>{{manutencao.id}}</td>
+			<td>{{manutencao.nome}}</td>
+			<td>{{manutencao.data}}</td>
+			<td>{{manutencao.categoria}}</td>
+			<td>{{manutencao.pago}}</td>
+			<td>editar | excluir</td>
+		</tr>
+	</table>
+
 </body>
 </html>
