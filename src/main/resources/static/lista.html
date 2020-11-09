@@ -3,6 +3,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="controller.js"></script>
 </head>
 <body>
 
@@ -19,16 +22,16 @@
 		<tr>
 			<th>id</th>
 			<th>nome</th>
-			<th>data</th>
 			<th>categoria</th>
+			<th>data</th>
 			<th>pago</th>
 			<th>acoes</th>
 		</tr>
 		<tr ng-repeat="manutencao in manutencoes">
 			<td>{{manutencao.id}}</td>
 			<td>{{manutencao.nome}}</td>
-			<td>{{manutencao.data}}</td>
 			<td>{{manutencao.categoria}}</td>
+			<td>{{manutencao.data}}</td>
 			<td>{{manutencao.pago}}</td>
 			<td>editar | excluir</td>
 		</tr>

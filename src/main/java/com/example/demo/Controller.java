@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,13 +35,21 @@ public class Controller implements WebMvcConfigurer{ //HABILITA O ROTEAMENTO DE 
 	public List<ManutencaoTable> buscarTodos(){
 		return repository.findAll();
 	}
-	
+	/*
 	//MOSTRA OS DADOS DA TABELA PELO ID
 	@GetMapping("/manutencoes/id/{id}")
 	public Optional<ManutencaoTable> buscarUm(@PathVariable Long id){ //PATH VARIABLE É UMA NOTAÇÃO UTILIZADA PARA PASSAR UM ID
 		return repository.findById(id);
 	}
+	*/
 	
+	//MOSTRA OS DADOS DA TABELA PELO ID MOSTRANDO "NOT FOUND"
+	@GetMapping("/manutencoes/id/{id}")
+	public ResponseEntity<ManutencaoTable> getById(@PathVariable long id){
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.notFound().build());
+	}
+
 	//INSERE NA TABELA PELA MESMA URL DO GET ALL
 	@PostMapping("/manutencoes")
 	public ManutencaoTable criar(@RequestBody ManutencaoTable objetoManutencao) {

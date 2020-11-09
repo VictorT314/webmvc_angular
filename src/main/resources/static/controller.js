@@ -14,5 +14,13 @@ app.controller('myCtrl', function($scope, $http) {
 
 		})
 	};
+	
+	$scope.buscarTodos = function(){
+		$http.get("http://localhost:8080/manutencoes").then(function(resposta){
+			$scope.manutencoes = resposta.data;
+		});
+	}
+	$scope.buscarTodos();
+
 
 });
