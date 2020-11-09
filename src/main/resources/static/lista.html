@@ -11,8 +11,10 @@
 	<a href="index.html"> Home </a> |
 	<a href="lista.html"> Lista </a> |
 	<a href="inserir.html"> Inserir </a> |
+	<a href="atualizar.html"> Atualizar </a> |
 	<br>
-	
+
+<div ng-app="myApp" ng-controller="myCtrl">
 	<table border="1">
 		<tr>
 			<th>id</th>
@@ -22,7 +24,7 @@
 			<th>pago</th>
 			<th>acoes</th>
 		</tr>
-		<tr ng-repeat = "manutencao in manutencoes">
+		<tr ng-repeat="manutencao in manutencoes">
 			<td>{{manutencao.id}}</td>
 			<td>{{manutencao.nome}}</td>
 			<td>{{manutencao.data}}</td>
@@ -31,6 +33,6 @@
 			<td>editar | excluir</td>
 		</tr>
 	</table>
-
+</div>
 </body>
 </html>

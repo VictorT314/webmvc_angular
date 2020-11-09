@@ -9,7 +9,8 @@ app.controller('myCtrl', function($scope, $http) {
 			'id' : $scope.id,
 			'nome' : $scope.nome,
 			'categoria' : $scope.categoria,
-			'data' : $scope.data
+			'data' : $scope.data,
+			'pago' : $scope.pago
 
 		})
 	};
