@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="controller.js"></script>
+</head>
+<body>
+
+	Esta é a atualizar 
+	
+	<hr>
+	<a href="index.html"> Home </a> | 
+	<a href="lista.html"> Lista </a> | 
+	<a href="inserir.html"> Inserir </a> |
+	<a href="atualizar.html"> Atualizar </a> |
+	
+	<hr>
+	
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<form>
+		
+		Id: <br> <input type="number" ng-model="id"> <br>
+		
+		Nome: <br> <input type="text" ng-model="nome" size="20" placeholder="Digite o serviço"> <br> 
+		
+		Categoria: <br> <input type="text" ng-model="categoria" size="20" placeholder="Digite a categoria"> <br> 
+		
+		Status: <br> <select ng-model="pago">
+				<option>true</option>
+				<option>false</option>
+		</select> <br>
+		</form>
+		
+		<table border="1">
+			<tr>
+				<th>id</th>
+				<th>nome</th>
+				
+				<th>categoria</th>
+				<th>pago</th>
+				<th>ações</th>
+			</tr>
+			<tr ng-repeat="manutencao in manutencoes">
+				<td>{{manutencao.id}}</td>
+				<td>{{manutencao.nome}}</td>				
+				<td>{{manutencao.categoria}}</td>
+				<td>{{manutencao.pago}}</td>
+				<td>	
+					<button ng-click="put()">Atualizar</button> 
+					|<button onclick="location.href='atualizar.html'"> Refresh </button> 
+				</td>
+			</tr>
+		</table>
+
+	</div>
+</body>
+</html>
